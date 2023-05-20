@@ -16,11 +16,39 @@ a {
 	color: inherit;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+}
+
 .header {
+	height: 100vh;
+	padding: 0 20px;
+	background-image: url('https://opencages.com.ua/_nuxt/img/homepage.0151b74.jpg.webp');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50%;
+	background-attachment: fixed;
+}
+
+.header::after {
+	content: "";
+	background: #0c3632;
+	position: absolute;
+	opacity: 0.85;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	transition: all 0.25s ease;
+}
+
+.nav {
+	position: relative;
+	z-index: 1;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	height: 50px;
-	background-color: black;
 }
 
 .logo-link {
@@ -46,8 +74,13 @@ a {
 	font-size: 14px;
 }
 
+.nav-list li:last-of-type {
+	padding-right: 0;
+}
+
 .nav-list-link {
 	position: relative;
+	transition: all 0.25s ease;
 }
 
 .nav-list-link::after {
@@ -97,7 +130,27 @@ a {
 	padding: 10px;
 }
 
+.nav-toggle {
+	font-size: 2rem;
+	color: white;
+	display: none;
+}
 
+.burger-icon {
+	display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    vertical-align: -0.125em;
+    cursor: pointer;
+}
 
+@media screen and (max-width: 992px) {
+	.nav-list {
+		display: none;
+	}
+	.nav-toggle {
+	display: block;
+}
 
+}
 
