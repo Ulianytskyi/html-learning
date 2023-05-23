@@ -2,8 +2,10 @@
 	font-family: "Raleway", "Helvetica", "Arial", sans-serif;
 
 }
+
 body {
 	margin: 0;
+	height: 1000px;
 }
 
 ul {
@@ -16,18 +18,25 @@ a {
 	color: inherit;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
 }
 
 .header {
-	height: 100vh;
-	padding: 0 20px;
+	height: calc(100vh - 40px);
+	padding: 20px;
 	background-image: url('https://opencages.com.ua/_nuxt/img/homepage.0151b74.jpg.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 50%;
 	background-attachment: fixed;
+	display: flex;
+	flex-direction: column;
 }
 
 .header::after {
@@ -43,12 +52,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav {
-	position: relative;
+	position: absolute;
 	z-index: 1;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 50px;
+	width: calc(100% - 40px);
+}
+
+.logo-container {
+	line-height: 1.5;
 }
 
 .logo-link {
@@ -68,9 +81,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-list li {
 	display: flex;
-	padding: 0 10px;
+	padding: 7px 10px 0 10px;
 	color: white;
-	font-weight: bold;
+	font-weight: 600;
 	font-size: 14px;
 }
 
@@ -110,18 +123,21 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0 10px;
 	border-radius: 3px;
 	background-color: #dd3d53;
+	font-size: 12px;
+	font-weight: bold;
 	transition: all .25s ease;
 }
 
 .heart-icon {
-	margin-right: 5px;
+	margin-right: 10px;
+	font-size: 14px;
 }
 
 .nav-list li:last-of-type a:hover {
 	background-color: #c9233a;
 }
 
-.nav-list li:last-of-type a svg{	
+.nav-list li:last-of-type a svg {
 	width: 1em;
 }
 
@@ -138,19 +154,62 @@ h1, h2, h3, h4, h5, h6 {
 
 .burger-icon {
 	display: inline-block;
-    font-size: inherit;
-    height: 1em;
-    vertical-align: -0.125em;
-    cursor: pointer;
+	font-size: inherit;
+	height: 1em;
+	vertical-align: -0.125em;
+	cursor: pointer;
 }
+
+.header-content {
+	position: relative;
+	z-index: 1;
+	margin: auto 0;
+}
+
+.header-content-title {
+	font-size: 56px;
+	font-weight: 700;
+	color: white;
+	line-height: 84px;
+
+}
+
+.header-content-title-green {
+	color: #17baaa;
+}
+
+.header-content-btn {
+	display: block;
+	background: #17baaa;
+	color: white;
+	align-items: center;
+	border: 0;
+	box-sizing: border-box;
+	display: inline-flex;
+	font-size: 14px;
+	font-size: .875rem;
+	font-weight: 700;
+	justify-content: center;
+	max-width: 100%;
+	min-height: 40px;
+	outline: none;
+	padding: 0 30px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: all .25s ease;
+}
+
+.header-content-btn:hover {
+	background: #129185;
+}
+
 
 @media screen and (max-width: 992px) {
 	.nav-list {
 		display: none;
 	}
+
 	.nav-toggle {
-	display: block;
+		display: block;
+	}
 }
-
-}
-
